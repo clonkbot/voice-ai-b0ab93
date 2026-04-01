@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom color definitions */
+:root {
+  --color-cream: #F5F0E8;
+  --color-steel: #3D4852;
+  --color-charcoal: #0D0D0D;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-cream {
+    color: var(--color-cream);
+  }
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+  .text-steel {
+    color: var(--color-steel);
+  }
+  .bg-steel {
+    background-color: var(--color-steel);
+  }
+  .border-cream {
+    border-color: var(--color-cream);
+  }
+}
+
+/* Font classes */
+.font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-body {
+  font-family: 'Crimson Pro', serif;
+}
+
+/* Base styles */
+body {
+  font-family: 'Crimson Pro', serif;
+  background-color: var(--color-charcoal);
+  color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 166, 35, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 166, 35, 0.4);
+}
+
+/* Text selection */
+::selection {
+  background: rgba(245, 166, 35, 0.3);
+  color: var(--color-cream);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid rgba(245, 166, 35, 0.5);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Textarea auto-resize behavior */
+textarea {
+  field-sizing: content;
+}
+
+/* Ensure mobile-friendly tap targets */
+button, a, input, textarea {
+  min-height: 44px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}
